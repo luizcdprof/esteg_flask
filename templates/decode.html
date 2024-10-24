@@ -5,7 +5,7 @@
         <h2>Decodificar Mensagem</h2>
     </div>
 
-    <div class="form">
+    <div class="form" id="decode-form">
         <form action="/decode" method="post" enctype="multipart/form-data">
             <label for="image">Escolha a imagem (PNG):</label>
             <input type="file" name="image" accept="image/png" required>
@@ -13,7 +13,9 @@
         </form>
     </div>
 
-    <div class="decoded_message">
+    <div class="spinner" id="loading-spinner"></div>
+
+    <div class="decoded_message" id="result">
         {% if message %}
             <h2>Mensagem Oculta:</h2>
             <p>{{ message }}</p>
